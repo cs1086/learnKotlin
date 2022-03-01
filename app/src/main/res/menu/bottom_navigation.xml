@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_baseline_soap_24"
+        android:title="recyclerview" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_baseline_sports_basketball_24"
+        android:title="webview" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_baseline_videogame_asset_24"
+        android:title="actvityIntnet" />
+    <item
+        android:id="@+id/pageview"
+        android:icon="@drawable/ic_baseline_videogame_asset_24"
+        android:title="pageview" />
+</menu>

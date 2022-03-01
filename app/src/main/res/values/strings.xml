@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_activity_google_map">GoogleMapActivity</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_home2">Home2Activity</string>
+    <string name="hello_world">Hello Square World!</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="title_activity_deep_link">DeepLinkActivity</string>
+    <string-array name="lunch">
+        <item>雞腿飯</item>
+        <item>魯肉飯</item>
+        <item>排骨飯</item>
+        <item>水餃</item>
+        <item>陽春麵</item>
+    </string-array>
+</resources>
