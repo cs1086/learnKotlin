@@ -11,7 +11,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.learnkotlin.databinding.ActivityDeepLinkBinding
-//電腦開啟adb輸入adb shell am start -W -a android.intent.action.VIEW -d "https://m.kkday.com/zh-tw/product/7317" com.example.learnkotlin 會自動開啟
+//測試deeplink
+//電腦開啟adb輸入adb shell am start -W -a android.intent.action.VIEW -d "https://m.kkday.com/zh-tw/product/7317" com.example.learnkotlin 會自動開啟 或者在Line隨便一個好友聊天頻道輸入https://m.kkday.com/zh-tw/product/7317後點開也可以觸發
 class DeepLinkActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration

@@ -11,19 +11,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnKotlin">
         <activity
-            android:name=".ProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DeepLinkActivity"
-            android:exported="true"
-            android:launchMode="singleTask"
-            android:label="@string/title_activity_deep_link"
-            android:theme="@style/Theme.LearnKotlin.NoActionBar">
+            android:name=".NotificationActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeepLinkActivity"
+            android:exported="true"
+            android:label="@string/title_activity_deep_link"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.LearnKotlin.NoActionBar">
             <intent-filter
                 android:autoVerify="true"
                 tools:targetApi="m">
@@ -40,12 +44,12 @@
         </activity>
         <activity
             android:name=".AnimatorActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SharePerferenceActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".InfoActivity" />
-        <activity android:name=".GithubStarsActivity"></activity>
+        <activity android:name=".GithubStarsActivity" />
         <activity android:name=".DatePickerDialogActivity" />
         <activity android:name=".ProgressControlActivity" />
         <activity
@@ -62,7 +66,7 @@
             android:name=".GoogleMapActivity"
             android:label="@string/title_activity_google_map"
             android:theme="@style/Theme.LearnKotlin.NoActionBar" />
-        <activity android:name=".WebViewActivity"></activity>
+        <activity android:name=".WebViewActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -85,10 +89,10 @@
             android:enabled="true"
             android:exported="true" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>
