@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">foodpanda</string>
     <string name="title_activity_google_map">GoogleMapActivity</string>
     <string name="first_fragment_label">First Fragment</string>
     <!-- Strings used for fragments for navigation -->
