@@ -46,7 +46,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             return
         }
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0L,0F,object :LocationListener{
-            override fun onLocationChanged(location: Location?) {
+
+
+            override fun onLocationChanged(location: Location) {
                 if (location != null) {
                     mMap.animateCamera(
                         CameraUpdateFactory.newLatLngZoom(LatLng(location.latitude, location.longitude), 12.0f))
@@ -57,10 +59,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
             }
 
-            override fun onProviderEnabled(p0: String?) {
+            override fun onProviderEnabled(p0: String) {
             }
 
-            override fun onProviderDisabled(p0: String?) {
+            override fun onProviderDisabled(p0: String) {
             }
 
         })

@@ -44,6 +44,7 @@ class SwipeRefreshActivity : AppCompatActivity() {
             swipeRefreshLayout.isRefreshing = false
         }
     }
+
     //隨機顏色
     fun getRandomColor(): Int {
         val rnd = Random()
