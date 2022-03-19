@@ -35,6 +35,10 @@ class LifeCycleTest2Activity : AppCompatActivity() {
 
         super.onRestoreInstanceState(savedInstanceState)
     }
+    override fun onRestart() {
+        println("####Activity2.onRestart")
+        super.onRestart()
+    }
     override fun onDestroy() {
         println("####Activity2.onDestroy")
         super.onDestroy()

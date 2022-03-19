@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,13 +22,15 @@ class BlankFragment1 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var sampleCallback:SampleCallback
     override fun onAttach(context: Context) {
         println("####BlankFragment1.onAttach()")
+        sampleCallback=context as SampleCallback
         super.onAttach(context)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println("####BlankFragment1.onCreate()")
+        println("####BlankFragment1.onCreate().name=${arguments?.getString("name")}")
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -38,13 +41,18 @@ class BlankFragment1 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        println("####BlankFragment1.onCreateView")
+        println("####BlankFragment1.onCreateView.name=${arguments?.getString("name")}")
+        val view = inflater.inflate(R.layout.fragment_blank,container,false)
+        view.findViewById<Button>(R.id.fragmentBUtton).setOnClickListener {
+            sampleCallback.onButtonClicked("你好")
+            println("####BlankFragment1.onCreateView.name=${arguments?.getString("name")}")
+        }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false)
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        println("####BlankFragment1.onActivityCreated")
+        println("####BlankFragment1.onActivityCreated.name=${arguments?.getString("name")}")
         super.onActivityCreated(savedInstanceState)
     }
 
@@ -67,7 +75,10 @@ class BlankFragment1 : Fragment() {
         println("####BlankFragment1.onStop")
         super.onStop()
     }
-
+    override fun onSaveInstanceState(outState: Bundle) {
+        println("####BlankFragment1.onSaveInstanceState")
+        super.onSaveInstanceState(outState)
+    }
     override fun onDestroyView() {
         println("####BlankFragment1.onDestroyView")
         super.onDestroyView()
@@ -82,6 +93,8 @@ class BlankFragment1 : Fragment() {
         println("####BlankFragment1.onDetach")
         super.onDetach()
     }
+
+
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -100,5 +113,8 @@ class BlankFragment1 : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+    interface SampleCallback{
+        fun onButtonClicked(data:String)
     }
 }

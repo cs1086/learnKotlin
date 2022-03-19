@@ -66,7 +66,10 @@ class BlankFragment2 : Fragment() {
         println("####BlankFragment2.onStop")
         super.onStop()
     }
-
+    override fun onSaveInstanceState(outState: Bundle) {
+        println("####BlankFragment2.onSaveInstanceState")
+        super.onSaveInstanceState(outState)
+    }
     override fun onDestroyView() {
         println("####BlankFragment2.onDestroyView")
         super.onDestroyView()
