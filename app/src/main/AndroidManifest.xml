@@ -11,10 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnKotlin">
         <activity
-            android:name=".LifeCycleTest2Activity"
-            android:exported="false" />
-        <activity
-            android:name=".LifeCycleTestActivity"
+            android:name=".MessageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +20,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".LifeCycleTest2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".LifeCycleTestActivity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".SwipeRefreshActivity"
             android:configChanges="orientation|screenSize"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".FCMActivity"
             android:exported="true" />
@@ -121,11 +125,11 @@
             </intent-filter>
         </service>
     </application>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>
