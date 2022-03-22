@@ -12,6 +12,7 @@ class MessageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_message)
+
         textView=findViewById(R.id.textView3)
         textView.setOnClickListener{
             handler.sendEmptyMessage(10)
@@ -41,12 +42,6 @@ class MessageActivity : AppCompatActivity() {
 //            Looper.loop()
             //test.a=5
             test.a.set(5)
-            println("####"+test.a.get())
-            //println("####"+test.a)
-        }.start()
-
-        Thread{
-            //textView.setText("測試2")
             println("####"+test.a.get())
             //println("####"+test.a)
         }.start()
