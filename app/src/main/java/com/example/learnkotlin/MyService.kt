@@ -8,10 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.media.RingtoneManager
-import android.os.Build
-import android.os.IBinder
-import android.os.IInterface
-import android.os.Parcel
+import android.os.*
 import androidx.core.app.NotificationCompat
 import java.io.FileDescriptor
 import java.util.*
@@ -36,7 +33,6 @@ class MyService : Service() {
             notificationManager.createNotificationChannel(channel)
             notificationManager.createNotificationChannel(channel2)
         }else{
-
             val notification=NotificationCompat.Builder(this, "100")
             builder=notification.setSmallIcon(R.drawable.ic_baseline_soap_24).setContentTitle("my nofication").setContentText("my text")
         }
@@ -53,7 +49,6 @@ class MyService : Service() {
         println("####service.onStart")
         super.onStart(intent, startId)
     }
-
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         println("####service.onStartCommand${Thread.currentThread()}")
         //stopSelf()
@@ -77,42 +72,16 @@ class MyService : Service() {
 
     override fun onBind(intent: Intent): IBinder {
         println("####service.onBind")
-        return object:IBinder{
-            override fun getInterfaceDescriptor(): String? {
-                TODO("Not yet implemented")
-            }
-
-            override fun pingBinder(): Boolean {
-                TODO("Not yet implemented")
-            }
-
-            override fun isBinderAlive(): Boolean {
-                TODO("Not yet implemented")
-            }
-
-            override fun queryLocalInterface(descriptor: String): IInterface? {
-                TODO("Not yet implemented")
-            }
-
-            override fun dump(fd: FileDescriptor, args: Array<out String>?) {
-                TODO("Not yet implemented")
-            }
-
-            override fun dumpAsync(fd: FileDescriptor, args: Array<out String>?) {
-                TODO("Not yet implemented")
-            }
-
-            override fun transact(code: Int, data: Parcel, reply: Parcel?, flags: Int): Boolean {
-                TODO("Not yet implemented")
-            }
-
-            override fun linkToDeath(recipient: IBinder.DeathRecipient, flags: Int) {
-                TODO("Not yet implemented")
-            }
-
-            override fun unlinkToDeath(recipient: IBinder.DeathRecipient, flags: Int): Boolean {
-                TODO("Not yet implemented")
-            }
-        };
+        return MyBind()
+    }
+    fun dosomething(){
+        println("####service.dosomething")
+    }
+    override fun onUnbind(intent: Intent?): Boolean {
+        println("####service.onUnbind")
+        return super.onUnbind(intent)
+    }
+    inner class MyBind: Binder(){
+        fun getService()=this@MyService
     }
 }

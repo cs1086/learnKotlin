@@ -119,16 +119,17 @@
         <service
             android:name=".MyService"
             android:enabled="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"
             android:exported="true"></service>
 
         <service
             android:name=".MyIntentService"
-            android:exported="false"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+             />
         <service
             android:name=".MyIntentService2"
-            android:exported="false"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
+            android:exported="true" />
         <service
             android:name=".MyForegroundService"
             android:enabled="true"
@@ -139,6 +140,14 @@
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
+        </service>
+        <service
+            android:name=".MyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+        </service>
+        <service
+            android:name=".MyJobIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE">
         </service>
     </application>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />

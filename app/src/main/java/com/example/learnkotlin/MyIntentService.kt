@@ -56,6 +56,10 @@ class MyIntentService : IntentService("MyIntentService") {
         println("####service.onStart")
         super.onStart(intent, startId)
     }
+    override fun onUnbind(intent: Intent?): Boolean {
+        println("####service.onUnbind")
+        return super.onUnbind(intent)
+    }
     override fun onDestroy() {
         println("####service.onDestroy")
         super.onDestroy()
