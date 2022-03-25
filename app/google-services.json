@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "439654523480",
+    "project_id": "learnkotlin-93142",
+    "storage_bucket": "learnkotlin-93142.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439654523480:android:6f7c2d05afb272e05ce02d",
+        "android_client_info": {
+          "package_name": "com.example.learnkotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "439654523480-pqmfbbni43u7phflb28cb3mfqh1fqcpk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP0CsFaJ-3K0CyEB4AooXCGZdyxXFLSKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "439654523480-pqmfbbni43u7phflb28cb3mfqh1fqcpk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
