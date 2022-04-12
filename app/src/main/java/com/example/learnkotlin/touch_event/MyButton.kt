@@ -9,9 +9,9 @@ class MyButton: AppCompatButton {
     constructor(context:Context):super(context){
 
     }
-    constructor(context:Context,attrs: AttributeSet):super(context,attrs){
+    constructor(context:Context,attrs: AttributeSet):super(context,attrs) {
 
-    
+    }
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         println("####MyButton.dispatchTouchEvent(motionEvent=${ev?.action})")
         return super.dispatchTouchEvent(ev)
