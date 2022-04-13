@@ -41,14 +41,16 @@ class TouchTestActivity : AppCompatActivity() {
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         println("####TouchTestActivity.dispatchTouchEvent(motionEvent=${ev?.action})")
-//        val result=super.dispatchTouchEvent(ev)
-//        println("####${result}")
-        return super.dispatchTouchEvent(ev)
+        val result=super.dispatchTouchEvent(ev)
+        println("####TouchTestActivity.dispatchTouchEvent.result=${result}")
+        return result
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         println("####TouchTestActivity.onTouchEvent(motionEvent=${event?.action})")
-        return super.onTouchEvent(event)
+        val result=super.onTouchEvent(event)
+        println("####TouchTestActivity.onTouchEvent.result=${result}")
+        return result
     }
 
 }

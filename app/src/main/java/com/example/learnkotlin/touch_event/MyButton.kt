@@ -14,12 +14,15 @@ class MyButton: AppCompatButton {
     }
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         println("####MyButton.dispatchTouchEvent(motionEvent=${ev?.action})")
-        return super.dispatchTouchEvent(ev)
+        val result=super.dispatchTouchEvent(ev)
+        println("####MyButton.dispatchTouchEvent.result=${result}")
+        return result
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         println("####MyButton.onTouchEvent(motionEvent=${event?.action})")
-        return super.onTouchEvent(event)
-        //return false
+        val result=super.onTouchEvent(event)
+        println("####MyButton.onTouchEvent.result=${result}")
+        return false
     }
 }

@@ -15,21 +15,22 @@ class MyLayout: ConstraintLayout {
     }
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         println("####MyLayout.dispatchTouchEvent(motionEvent=${ev?.action})")
-//        val result=super.dispatchTouchEvent(ev)
-//        println("####${result}")
-        return super.dispatchTouchEvent(ev)
+        val result=super.dispatchTouchEvent(ev)
+        println("####MyLayout.dispatchTouchEvent.result=${result}")
+        return result
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         println("####MyLayout.onTouchEvent(motionEvent=${event?.action})")
-        return super.onTouchEvent(event)
-        //return false
+        val result=super.onTouchEvent(event)
+        println("####MyLayout.onTouchEvent.result=${result}")
+        return result
     }
 
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
         println("####MyLayout.onInterceptTouchEvent(motionEvent=${ev?.action})")
-//        val result=super.onInterceptTouchEvent(ev)
-//        println("####${result}")
-        return super.onInterceptTouchEvent(ev)
+        val result=super.onInterceptTouchEvent(ev)
+        println("####MyLayout.onInterceptTouchEvent.result=${result}")
+        return result
     }
 }
