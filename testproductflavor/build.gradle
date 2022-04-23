@@ -12,7 +12,6 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -33,17 +32,21 @@ android {
     productFlavors {
         stable {
             dimension 'appstate'
-            applicationIdSuffix '.stable'
+            applicationIdSuffix 'stable'
             versionCode 1
             versionName '1.0'
             versionNameSuffix '-stable'
+            buildConfigField "boolean","isFree","true"
+            buildConfigField  "boolean","isColor","true"
         }
         dev {
             dimension 'appstate'
-            applicationIdSuffix '.def'
+            applicationIdSuffix 'def'
             versionCode 1
             versionName '1.0'
             versionNameSuffix '-def'
+            buildConfigField "boolean","isFree","false"
+            buildConfigField  "boolean","isColor","false"
         }
     }
 }
