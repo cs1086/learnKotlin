@@ -11,10 +11,12 @@ import android.view.animation.DecelerateInterpolator
 import android.view.animation.LinearInterpolator
 import android.widget.ImageView
 
+@Suppress("FillClass")
 class AnimatorActivity : AppCompatActivity() {
     lateinit var ball:ImageView;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_animator)
         ball=findViewById(R.id.ball)
         //val animator=ValueAnimator.ofFloat(ball.translationX,ball.translationX+600,ball.translationX)
@@ -22,6 +24,7 @@ class AnimatorActivity : AppCompatActivity() {
             ball,
             "rotationY",
             0.0f, 360.0f)
+
         animator.duration=1000
         animator.interpolator = DecelerateInterpolator()
         animator.addUpdateListener {
