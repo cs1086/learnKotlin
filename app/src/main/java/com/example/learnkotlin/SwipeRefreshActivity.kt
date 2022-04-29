@@ -54,6 +54,7 @@ class SwipeRefreshActivity : AppCompatActivity() {
             rnd.nextInt(256)
         )
     }
+
     fun getDataList(): MutableList<InfoItem> {
         val map= mutableMapOf("blue_leader" to "ProgressControl","blue_manager" to "DatePick","blue_player_01" to "小春","blue_player_03" to "林敬倫","blue_player_08" to "小八","blue_player_09" to "李佳薇","blue_player_12" to "顏佑庭","blue_player_18" to "洗菜","blue_player_27" to "采子","blue_player_52" to "潘君侖","blue_player_55" to "李思緯","blue_player_56" to "小刀")
         val list = arrayListOf<InfoItem>()
