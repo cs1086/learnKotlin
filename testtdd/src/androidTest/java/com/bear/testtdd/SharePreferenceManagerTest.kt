@@ -1,0 +1,21 @@
+package com.bear.testtdd
+
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import org.junit.Assert.*
+import org.junit.Test
+import org.junit.runner.RunWith
+
+@RunWith(AndroidJUnit4::class)
+class SharePreferenceManagerTest(){
+    @Test
+    fun useAppContext() {
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        val userId="abc123"
+        val preKey="account"
+        val sharePreferenceManager=SharePreferenceManager(appContext)
+        sharePreferenceManager.saveString(preKey,userId)
+        val valueFromSp=sharePreferenceManager.getString(preKey)
+        assertEquals(userId,valueFromSp)
+    }
+}

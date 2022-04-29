@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
         //rxjava
         val list= arrayOf("王柏榕","王威晨","彭政閔")
+        //從陣列取得資料轉成Observalble 
         Observable.fromArray(list).observeOn(Schedulers.io())
             .subscribe(object :Observer<Array<String>>{
                 override fun onSubscribe(d: Disposable) {

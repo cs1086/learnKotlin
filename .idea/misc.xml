@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/testtdd/src/main/res/layout/activity_main.xml" value="0.15" />
+        <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/testtdd/src/main/res/layout/activity_result.xml" value="0.13072916666666667" />
         <entry key="..\:/Appdev/kotlin/pratice/learnKotlin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1315" />
         <entry key="..\:/Appdev/kotlin/pratice/learnKotlin/app/src/main/res/layout/activity_animator.xml" value="0.16458333333333333" />
         <entry key="..\:/Appdev/kotlin/pratice/learnKotlin/app/src/main/res/layout/activity_async_task.xml" value="0.1390625" />
