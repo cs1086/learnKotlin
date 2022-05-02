@@ -32,6 +32,29 @@ android {
     }
     //允許unit test類別可以使用resouce資源
     testOptions.unitTests.includeAndroidResources = true
+    flavorDimensions 'productFlavor'
+    productFlavors {
+        mock {
+            dimension 'productFlavor'
+            resValue "string","name","from mock"
+        }
+        prod {
+            dimension 'productFlavor'
+            resValue "string","name","from prod"
+        }
+    }
+    sourceSets {
+        String sharedTestDir = 'src/sharedTest/java'
+        String fakeJsonDir = 'src/sharedTest/fakejson'
+        test {
+            java.srcDir sharedTestDir
+            resources.srcDirs += fakeJsonDir
+        }
+        androidTest {
+            java.srcDir sharedTestDir
+            resources.srcDirs += fakeJsonDir
+        }
+    }
 }
 
 dependencies {

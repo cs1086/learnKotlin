@@ -1,12 +1,13 @@
 package com.bear.testtdd
 
+import Utils555
 import androidx.test.InstrumentationRegistry.getTargetContext
 import androidx.test.platform.app.InstrumentationRegistry
 import kotlinx.android.synthetic.main.number_select_component.view.*
 import org.junit.Assert.*
 import org.junit.Test
 
-class NumberSelectAndroidTest(){
+class NumberSelectAndroidTest{
     @Test
     fun testAddButtonThenValueShouldAdd() {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
