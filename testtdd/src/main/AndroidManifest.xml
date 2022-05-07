@@ -10,26 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnKotlin">
         <activity
-            android:name=".mvp.ProductActivity"
+            android:name=".mvvm.Product2Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".mvp.ProductActivity"
+            android:exported="true">
         </activity>
         <activity
             android:name=".ProductFlavorActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".NumberSelectActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ResultActivity"
             android:exported="false" />
