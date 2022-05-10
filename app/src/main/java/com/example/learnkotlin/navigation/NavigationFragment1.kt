@@ -46,7 +46,10 @@ class NavigationFragment1 : Fragment() {
         val changeToFragment=view.findViewById<Button>(R.id.change_to_fragment2)
         changeToFragment.setOnClickListener {
             val navController:NavController=findNavController()
-            navController.navigate(R.id.action_navigationFragment1_to_navigationFragment2)
+            val bundle=Bundle()
+            bundle.putString("myName","大鼓祥平")
+            bundle.putStringArray("myAccount", arrayOf<String>("abc123","tt123"))
+            navController.navigate(R.id.action_navigationFragment1_to_navigationFragment2,bundle)
         }
         super.onViewCreated(view, savedInstanceState)
     }

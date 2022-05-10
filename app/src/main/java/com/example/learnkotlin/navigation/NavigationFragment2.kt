@@ -42,6 +42,7 @@ class NavigationFragment2 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val button=view.findViewById<Button>(R.id.back_to_fragment1)
+        button.setText(arguments?.getString("myName"))
         button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigationFragment2_to_navigationFragment1))
         super.onViewCreated(view, savedInstanceState)
     }

@@ -9,10 +9,18 @@
         android:id="@+id/navigationFragment1"
         android:name="com.example.learnkotlin.navigation.NavigationFragment1"
         android:label="fragment_navigation1"
-        tools:layout="@layout/fragment_navigation1" >
+        tools:layout="@layout/fragment_navigation1">
         <action
             android:id="@+id/action_navigationFragment1_to_navigationFragment2"
-            app:destination="@id/navigationFragment2" />
+            app:destination="@id/navigationFragment2"
+            app:enterAnim="@anim/slide_from_left"
+            app:exitAnim="@anim/slide_to_right"
+            app:popEnterAnim="@anim/rotation_scale"
+            app:popExitAnim="@anim/alpha" />
+        <deepLink
+            android:id="@+id/deepLink"
+            android:autoVerify="true"
+            app:uri="https://www.google.com.tw/" />
     </fragment>
     <fragment
         android:id="@+id/navigationFragment2"
@@ -21,6 +29,17 @@
         tools:layout="@layout/fragment_navigation2" >
         <action
             android:id="@+id/action_navigationFragment2_to_navigationFragment1"
-            app:destination="@id/navigationFragment1" />
+            app:destination="@id/navigationFragment1"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/rotation_scale"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="myName"
+            app:argType="string"
+            android:defaultValue="王柏融" />
+        <argument
+            android:name="myAccount"
+            app:argType="string[]" />
     </fragment>
 </navigation>
