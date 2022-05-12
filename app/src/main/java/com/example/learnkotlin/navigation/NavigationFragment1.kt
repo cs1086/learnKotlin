@@ -1,15 +1,21 @@
 package com.example.learnkotlin.navigation
 
+import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.SavedStateViewModelFactory
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.learnkotlin.R
+import com.example.learnkotlin.databinding.FragmentNavigation1Binding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +31,7 @@ class NavigationFragment1 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    lateinit var fragmentNavigation1Binding:FragmentNavigation1Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         println("####fragment2.onCreate")
@@ -40,8 +46,10 @@ class NavigationFragment1 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         println("####fragment2.onCreateView")
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigation1, container, false)
+        fragmentNavigation1Binding = DataBindingUtil.inflate(inflater,R.layout.fragment_navigation1,container,false)
+        return fragmentNavigation1Binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,6 +64,12 @@ class NavigationFragment1 : Fragment() {
             navController.navigate(R.id.action_navigationFragment1_to_navigationFragment2,bundle)
         }
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        val navigationViewModel:NavigationViewModel=ViewModelProvider(this).get(NavigationViewModel::class.java)
+        fragmentNavigation1Binding.data=navigationViewModel
+        super.onActivityCreated(savedInstanceState)
     }
 
     companion object {
