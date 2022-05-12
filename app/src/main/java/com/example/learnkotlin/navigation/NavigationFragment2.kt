@@ -25,6 +25,7 @@ class NavigationFragment2 : Fragment() {
     private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        println("####fragment2.onCreate")
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
@@ -36,11 +37,13 @@ class NavigationFragment2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        println("####fragment2.onCreateView")
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_navigation2, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        println("####fragment2.onViewCreated")
         val button=view.findViewById<Button>(R.id.back_to_fragment1)
         button.setText(arguments?.getString("myName"))
         button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigationFragment2_to_navigationFragment1))

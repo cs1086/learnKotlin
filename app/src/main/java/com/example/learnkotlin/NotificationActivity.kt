@@ -23,18 +23,14 @@ class NotificationActivity : AppCompatActivity() {
         var builder: NotificationCompat.Builder
         val notificationManager=getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if(Build.VERSION.SDK_INT>Build.VERSION_CODES.O){
-            //setChannelId 要寫且要指定要使用哪個channel的id 否則不會顯示notification
-            builder=NotificationCompat.Builder(this,"100").setSmallIcon(R.drawable.ic_baseline_soap_24).setContentTitle("my nofication").setContentText("my text").setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)).setVibrate(
-                longArrayOf(300,600,300,600)).setLights(Color.GREEN,1000,1000).setContentIntent(pendingIntent).setAutoCancel(true).setChannelId("channel2")
-            val channel=NotificationChannel("channel","mychannel",NotificationManager.IMPORTANCE_HIGH)
+            //IMPORTANCE_HIGH高會顯示出文字且震動 IMPORTANCE_DEFAULT會默默在導行列顯示小icon並震動 IMPORTANCE_LOW只會默默在導行列顯示小icon
+            val channel=NotificationChannel("channel","mychannel",NotificationManager.IMPORTANCE_DEFAULT)
             val channel2=NotificationChannel("channel2","mychannel2",NotificationManager.IMPORTANCE_LOW)
             notificationManager.createNotificationChannel(channel)
             notificationManager.createNotificationChannel(channel2)
-        }else{
-
-            val notification=NotificationCompat.Builder(this, "100")
-            builder=notification.setSmallIcon(R.drawable.ic_baseline_soap_24).setContentTitle("my nofication").setContentText("my text")
         }
+        builder=NotificationCompat.Builder(this,"channel").setSmallIcon(R.drawable.ic_baseline_soap_24).setContentTitle("my nofication").setContentText("my text").setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)).setVibrate(
+            longArrayOf(300,600,300,600)).setLights(Color.GREEN,1000,1000).setContentIntent(pendingIntent).setAutoCancel(true)
         val nofication=builder.build()
 
         notificationManager.notify(100,nofication)

@@ -20,7 +20,7 @@
         <deepLink
             android:id="@+id/deepLink"
             android:autoVerify="true"
-            app:uri="https://www.google.com.tw/" />
+            app:uri="m.facebook.com/{params}" />
     </fragment>
     <fragment
         android:id="@+id/navigationFragment2"

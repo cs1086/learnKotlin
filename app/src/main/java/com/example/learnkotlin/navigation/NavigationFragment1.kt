@@ -28,6 +28,7 @@ class NavigationFragment1 : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        println("####fragment2.onCreate")
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -38,12 +39,15 @@ class NavigationFragment1 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        println("####fragment2.onCreateView")
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_navigation1, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        println("####fragment2.onViewCreated")
         val changeToFragment=view.findViewById<Button>(R.id.change_to_fragment2)
+        changeToFragment.setText(arguments?.getString("params")?:"無獲得參數")//從deeplink 的url後的參數拿
         changeToFragment.setOnClickListener {
             val navController:NavController=findNavController()
             val bundle=Bundle()
@@ -73,4 +77,5 @@ class NavigationFragment1 : Fragment() {
                 }
             }
     }
+
 }
