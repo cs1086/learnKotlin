@@ -6,8 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelStoreOwner
+import androidx.lifecycle.get
 import androidx.navigation.Navigation
 import com.example.learnkotlin.R
+import com.example.learnkotlin.databinding.FragmentNavigation2Binding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,7 +28,7 @@ class NavigationFragment2 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    lateinit var binding: FragmentNavigation2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         println("####fragment2.onCreate")
         super.onCreate(savedInstanceState)
@@ -39,7 +44,8 @@ class NavigationFragment2 : Fragment() {
     ): View? {
         println("####fragment2.onCreateView")
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigation2, container, false)
+        binding=DataBindingUtil.inflate(inflater,R.layout.fragment_navigation2,container,false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -48,6 +54,18 @@ class NavigationFragment2 : Fragment() {
         button.setText(arguments?.getString("myName"))
         button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_navigationFragment2_to_navigationFragment1))
         super.onViewCreated(view, savedInstanceState)
+    }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        println("####fragment2.onActivityCreated")
+        val viewModel=ViewModelProvider(activity as ViewModelStoreOwner).get(NavigationViewModel::class.java)
+        println("####fragment2.navigationViewModel=$viewModel")
+        binding.data=viewModel
+        binding.lifecycleOwner=activity
+        super.onActivityCreated(savedInstanceState)
+    }
+    override fun onDestroy() {
+        println("####fragment2.onDestroy")
+        super.onDestroy()
     }
     companion object {
         /**

@@ -7,10 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.SeekBar
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.SavedStateViewModelFactory
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelStoreOwner
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -34,7 +36,7 @@ class NavigationFragment1 : Fragment() {
     lateinit var fragmentNavigation1Binding:FragmentNavigation1Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println("####fragment2.onCreate")
+        println("####fragment1.onCreate")
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -45,7 +47,7 @@ class NavigationFragment1 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        println("####fragment2.onCreateView")
+        println("####fragment1.onCreateView")
 
         // Inflate the layout for this fragment
         fragmentNavigation1Binding = DataBindingUtil.inflate(inflater,R.layout.fragment_navigation1,container,false)
@@ -53,7 +55,7 @@ class NavigationFragment1 : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        println("####fragment2.onViewCreated")
+        println("####fragment1.onViewCreated")
         val changeToFragment=view.findViewById<Button>(R.id.change_to_fragment2)
         changeToFragment.setText(arguments?.getString("params")?:"無獲得參數")//從deeplink 的url後的參數拿
         changeToFragment.setOnClickListener {
@@ -67,11 +69,40 @@ class NavigationFragment1 : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        val navigationViewModel:NavigationViewModel=ViewModelProvider(this).get(NavigationViewModel::class.java)
+        println("####fragment1.onActivityCreated")
+        val navigationViewModel:NavigationViewModel=ViewModelProvider(activity as ViewModelStoreOwner).get(NavigationViewModel::class.java)
+        println("####fragment1.navigationViewModel=$navigationViewModel")
         fragmentNavigation1Binding.data=navigationViewModel
+        fragmentNavigation1Binding.lifecycleOwner=activity
+        fragmentNavigation1Binding.seekBar2.setOnSeekBarChangeListener(object:SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                navigationViewModel.number.value=progress
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+            }
+        })
         super.onActivityCreated(savedInstanceState)
     }
 
+    override fun onStart() {
+        println("####fragment1.onStart")
+        super.onStart()
+    }
+
+    override fun onResume() {
+        println("####fragment1.onResume")
+        super.onResume()
+    }
+    override fun onDestroy() {
+        println("####fragment1.onDestroy")
+        super.onDestroy()
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of
