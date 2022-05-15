@@ -19,7 +19,6 @@ class NavigationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navigation)
-
         //有錯誤
 //        val controller=findNavController(R.id.fragmentContainerView)
 //        NavigationUI.setupActionBarWithNavController(this,controller)

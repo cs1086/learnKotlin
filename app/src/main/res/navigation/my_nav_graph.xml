@@ -27,13 +27,6 @@
         android:name="com.example.learnkotlin.navigation.NavigationFragment2"
         android:label="fragment_navigation2"
         tools:layout="@layout/fragment_navigation2" >
-        <action
-            android:id="@+id/action_navigationFragment2_to_navigationFragment1"
-            app:destination="@id/navigationFragment1"
-            app:enterAnim="@anim/slide_from_right"
-            app:exitAnim="@anim/slide_to_left"
-            app:popEnterAnim="@anim/rotation_scale"
-            app:popUpToInclusive="false" />
         <argument
             android:name="myName"
             app:argType="string"
@@ -41,5 +34,28 @@
         <argument
             android:name="myAccount"
             app:argType="string[]" />
+        <action
+            android:id="@+id/action_navigationFragment2_to_navigation3"
+            app:destination="@id/navigation3" />
     </fragment>
+    <navigation android:id="@+id/navigation3"
+        app:startDestination="@id/regist1Fragment">
+        <fragment
+            android:id="@+id/regist1Fragment"
+            android:name="com.example.learnkotlin.Regist1Fragment"
+            android:label="fragment_regist1"
+            tools:layout="@layout/fragment_regist1" >
+            <action
+                android:id="@+id/action_regist1Fragment_to_regist2Fragment"
+                app:destination="@id/regist2Fragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/regist2Fragment"
+            android:name="com.example.learnkotlin.Regist2Fragment"
+            android:label="fragment_regist2"
+            tools:layout="@layout/fragment_regist2" />
+        <action
+            android:id="@+id/action_global_navigationFragment2"
+            app:destination="@id/navigationFragment2" />
+    </navigation>
 </navigation>

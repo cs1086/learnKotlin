@@ -1,5 +1,6 @@
 package com.example.learnkotlin.navigation
 
+import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,6 +17,7 @@ import androidx.lifecycle.ViewModelStoreOwner
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.savedstate.SavedStateRegistryOwner
 import com.example.learnkotlin.R
 import com.example.learnkotlin.databinding.FragmentNavigation1Binding
 
@@ -70,13 +72,13 @@ class NavigationFragment1 : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         println("####fragment1.onActivityCreated")
-        val navigationViewModel:NavigationViewModel=ViewModelProvider(activity as ViewModelStoreOwner).get(NavigationViewModel::class.java)
+        val navigationViewModel:NavigationViewModel=ViewModelProvider(activity.let {activity as ViewModelStoreOwner },SavedStateViewModelFactory(activity.let { activity as Activity }.application,activity.let {activity as SavedStateRegistryOwner })).get(NavigationViewModel::class.java)
         println("####fragment1.navigationViewModel=$navigationViewModel")
         fragmentNavigation1Binding.data=navigationViewModel
         fragmentNavigation1Binding.lifecycleOwner=activity
         fragmentNavigation1Binding.seekBar2.setOnSeekBarChangeListener(object:SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                navigationViewModel.number.value=progress
+                navigationViewModel.getNumber().value=progress
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {

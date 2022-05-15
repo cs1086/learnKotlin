@@ -37,7 +37,7 @@ class LifeCycleTestActivity : AppCompatActivity(), BlankFragment1.SampleCallback
         button = findViewById(R.id.fragButton)
         button.setOnClickListener {
             transition = fragmentManager.beginTransaction().setCustomAnimations(
-                android.R.anim.fade_in, R.anim.fragment_close_exit
+                android.R.anim.fade_in, R.anim.nav_default_exit_anim
             )
             //println("####setOnClickListener.type=$type")
             //If fragment is already on stack, we can pop back stack to prevent stack infinite growth
@@ -66,7 +66,7 @@ class LifeCycleTestActivity : AppCompatActivity(), BlankFragment1.SampleCallback
             }
         }
         transition = fragmentManager.beginTransaction().setCustomAnimations(
-            android.R.anim.fade_in, R.anim.fragment_close_exit
+            android.R.anim.fade_in, R.anim.nav_default_exit_anim
         )
         if (savedInstanceState != null) {
             blankFragment1 =
