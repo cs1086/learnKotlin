@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LifeCycleTestActivity">
+    tools:context=".activity_fragment_livecycle.LifeCycleTestActivity">
 
     <Button
         android:id="@+id/fragButton"

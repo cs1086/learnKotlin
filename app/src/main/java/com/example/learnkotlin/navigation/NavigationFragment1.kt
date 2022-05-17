@@ -72,7 +72,7 @@ class NavigationFragment1 : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         println("####fragment1.onActivityCreated")
-        val navigationViewModel:NavigationViewModel=ViewModelProvider(activity.let {activity as ViewModelStoreOwner },SavedStateViewModelFactory(activity.let { activity as Activity }.application,activity.let {activity as SavedStateRegistryOwner })).get(NavigationViewModel::class.java)
+        val navigationViewModel:NavigationViewModel=ViewModelProvider(activity.let {activity as ViewModelStoreOwner },SavedStateViewModelFactory(requireActivity().application,requireActivity())).get(NavigationViewModel::class.java)
         println("####fragment1.navigationViewModel=$navigationViewModel")
         fragmentNavigation1Binding.data=navigationViewModel
         fragmentNavigation1Binding.lifecycleOwner=activity

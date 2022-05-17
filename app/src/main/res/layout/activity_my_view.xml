@@ -8,7 +8,7 @@
 
     <view
         android:id="@+id/myView"
-        class="com.example.learnkotlin.myView.MyViewActivity$MyView"
+        class="com.example.learnkotlin.custom_view.MyViewActivity$MyView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"

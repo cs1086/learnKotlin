@@ -20,6 +20,10 @@
     values-round/strings.xml for round devices.
     -->
     <string name="title_activity_deep_link">DeepLinkActivity</string>
+    <string name="title_activity_buttom_navigation">ButtomNavigationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
     <string-array name="lunch">
         <item>雞腿飯</item>
         <item>魯肉飯</item>

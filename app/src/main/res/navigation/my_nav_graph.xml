@@ -42,7 +42,7 @@
         app:startDestination="@id/regist1Fragment">
         <fragment
             android:id="@+id/regist1Fragment"
-            android:name="com.example.learnkotlin.Regist1Fragment"
+            android:name="com.example.learnkotlin.navigation.Regist1Fragment"
             android:label="fragment_regist1"
             tools:layout="@layout/fragment_regist1" >
             <action
@@ -51,7 +51,7 @@
         </fragment>
         <fragment
             android:id="@+id/regist2Fragment"
-            android:name="com.example.learnkotlin.Regist2Fragment"
+            android:name="com.example.learnkotlin.navigation.Regist2Fragment"
             android:label="fragment_regist2"
             tools:layout="@layout/fragment_regist2" />
         <action

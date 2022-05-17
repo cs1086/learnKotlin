@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LifeCycleTest2Activity">
+    tools:context=".activity_fragment_livecycle.LifeCycleTest2Activity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
