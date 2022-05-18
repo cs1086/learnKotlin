@@ -1,212 +1,225 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-package="com.example.learnkotlin">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.learnkotlin">
 
-<application
-    android:allowBackup="true"
-    android:icon="@drawable/foodpanda"
-    android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/Theme.LearnKotlin">
-    <activity
-        android:name="com.example.learnkotlin.jetpack.lifecycle.MainActivity"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/foodpanda"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LearnKotlin">
+        <activity
+            android:name="com.example.learnkotlin.ui_test.BannerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-    <activity
-        android:name="com.example.learnkotlin.menu.buttom_navigation.ButtomNavigationActivity"
-        android:exported="true"
-        android:label="@string/title_activity_buttom_navigation">
-    </activity>
-    <activity
-        android:name=".navigation.NavigationActivity"
-        android:exported="true">
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.learnkotlin.ui_test.AdActivity"
+            android:exported="true"
+            android:hardwareAccelerated="true">
+        </activity>
 
-        <nav-graph android:value="@navigation/my_nav_graph" />
-    </activity>
-    <activity
-        android:name=".retrofit_rxjava_room.MainActivity"
-        android:exported="true">
+        <activity
+            android:name="com.example.learnkotlin.jetpack.lifecycle.MainActivity"
+            android:exported="true"
+            android:hardwareAccelerated="true"></activity>
+        <activity
+            android:name="com.example.learnkotlin.menu.buttom_navigation.ButtomNavigationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_buttom_navigation"></activity>
+        <activity
+            android:name=".navigation.NavigationActivity"
+            android:exported="true">
 
-    </activity>
-    <activity
-        android:name=".custom_view.MyViewActivity"
-        android:exported="true"></activity>
-    <activity
-        android:name=".java_function.serializable.SerializableAndParcelableActivity"
-        android:exported="true" />
-    <activity
-        android:name=".java_function.serializable.SerializableAndParcelable2Activity"
-        android:exported="true" />
-    <activity
-        android:name=".java_function.volatile_test.TestVolatileActivity"
-        android:exported="true" />
-    <activity
-        android:name=".view_test.CoordinatorLayoutActivity"
-        android:exported="true">
+            <nav-graph android:value="@navigation/my_nav_graph" />
+        </activity>
+        <activity
+            android:name=".retrofit_rxjava_room.MainActivity"
+            android:exported="true">
 
-    </activity>
-    <activity
-        android:name=".touch_event.TouchTestActivity"
-        android:exported="true" />
-    <activity
-        android:name=".jetpack.work_manager.WorkManagerActivity"
-        android:exported="true" />
-    <activity
-        android:name=".service_test.ServiceActivity"
-        android:exported="true" />
-    <activity
-        android:name=".java_function.MessageActivity"
-        android:exported="true">
+        </activity>
+        <activity
+            android:name=".custom_view.MyViewActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".java_function.serializable.SerializableAndParcelableActivity"
+            android:exported="true" />
+        <activity
+            android:name=".java_function.serializable.SerializableAndParcelable2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".java_function.volatile_test.TestVolatileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui_test.CoordinatorLayoutActivity"
+            android:exported="true">
 
-    </activity>
-    <activity
-        android:name=".activity_fragment_livecycle.LifeCycleTest2Activity"
-        android:exported="false" />
-    <activity
-        android:name=".activity_fragment_livecycle.LifeCycleTestActivity"
-        android:exported="true" />
-    <activity
-        android:name=".view_test.SwipeRefreshActivity"
-        android:configChanges="orientation|screenSize"
-        android:exported="true">
+        </activity>
+        <activity
+            android:name=".touch_event.TouchTestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".jetpack.work_manager.WorkManagerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".service_test.ServiceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".java_function.MessageActivity"
+            android:exported="true">
 
-    </activity>
-    <activity
-        android:name=".fcm.FCMActivity"
-        android:exported="true" />
-    <activity
-        android:name=".view_test.NotificationActivity"
-        android:exported="true" />
-    <activity
-        android:name=".java_function.deeplink.ProductActivity"
-        android:exported="true">
+        </activity>
+        <activity
+            android:name=".activity_fragment_livecycle.LifeCycleTest2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_fragment_livecycle.LifeCycleTestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui_test.SwipeRefreshActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true">
 
-    </activity>
-    <activity
-        android:name=".java_function.deeplink.DeepLinkActivity"
-        android:exported="true"
-        android:label="@string/title_activity_deep_link"
-        android:launchMode="singleTask"
-        android:theme="@style/Theme.LearnKotlin.NoActionBar">
-        <intent-filter
-            android:autoVerify="true"
-            tools:targetApi="m">
-            <action android:name="android.intent.action.VIEW" />
+        </activity>
+        <activity
+            android:name=".fcm.FCMActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui_test.NotificationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".java_function.deeplink.ProductActivity"
+            android:exported="true">
 
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.BROWSABLE" />
+        </activity>
+        <activity
+            android:name=".java_function.deeplink.DeepLinkActivity"
+            android:exported="true"
+            android:label="@string/title_activity_deep_link"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.LearnKotlin.NoActionBar">
+            <intent-filter
+                android:autoVerify="true"
+                tools:targetApi="m">
+                <action android:name="android.intent.action.VIEW" />
 
-            <data
-                android:host="m.kkday.com"
-                android:pathPattern="/.*/product/.*"
-                android:scheme="https" />
-        </intent-filter>
-    </activity>
-    <activity
-        android:name=".view_test.AnimatorActivity"
-        android:exported="true" />
-    <activity
-        android:name=".sharedPreference.SharePerferenceActivity"
-        android:exported="true">
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
-    </activity>
-    <activity android:name=".okhttp_recyclerview.InfoActivity" />
-    <activity android:name=".okhttp_recyclerview.GithubStarsActivity" />
-    <activity android:name=".view_test.DatePickerDialogActivity" />
-    <activity
-        android:name=".view_test.ProgressControlActivity"
-        android:exported="true">
+                <data
+                    android:host="m.kkday.com"
+                    android:pathPattern="/.*/product/.*"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui_test.AnimatorActivity"
+            android:exported="true" />
+        <activity
+            android:name=".sharedPreference.SharePerferenceActivity"
+            android:exported="true">
 
-    </activity>
-    <activity
-        android:name=".bottom_navigation_recycleview_webview_pageview.Home2Activity"
-        android:exported="true"
-        android:label="@string/title_activity_home2" />
-    <activity
-        android:name=".map.MapsActivity"
-        android:exported="true"
-        android:label="@string/title_activity_maps">
+        </activity>
+        <activity android:name=".okhttp_recyclerview.InfoActivity" />
+        <activity android:name=".okhttp_recyclerview.GithubStarsActivity" />
+        <activity android:name=".ui_test.DatePickerDialogActivity" />
+        <activity
+            android:name=".ui_test.ProgressControlActivity"
+            android:exported="true">
 
-    </activity>
-    <activity
-        android:name=".map.GoogleMapActivity"
-        android:exported="true"
-        android:label="@string/title_activity_google_map"
-        android:theme="@style/Theme.LearnKotlin.NoActionBar">
+        </activity>
+        <activity
+            android:name=".bottom_navigation_recycleview_webview_pageview.Home2Activity"
+            android:exported="true"
+            android:label="@string/title_activity_home2" />
+        <activity
+            android:name=".map.MapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps">
 
-    </activity>
-    <activity
-        android:name=".bottom_navigation_recycleview_webview_pageview.MainActivity"
-        android:exported="true"></activity>
-    <activity
-        android:name=".imagepicker_drawView_timerView.MainActivity"
-        android:exported="true">
+        </activity>
+        <activity
+            android:name=".map.GoogleMapActivity"
+            android:exported="true"
+            android:label="@string/title_activity_google_map"
+            android:theme="@style/Theme.LearnKotlin.NoActionBar">
 
-    </activity>
-    <!--
-               Set to true if your app is Standalone, that is, it does not require the handheld
-               app to run.
-        -->
-    <meta-data
-        android:name="com.google.android.wearable.standalone"
-        android:value="true" />
-    <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="@string/google_maps_key" />
-    <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
-    <receiver
-        android:name=".fcm.CusBroadcastReceiver"
-        android:enabled="true"
-        android:exported="true"
-        tools:ignore="Instantiatable" />
+        </activity>
+        <activity
+            android:name=".bottom_navigation_recycleview_webview_pageview.MainActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".imagepicker_drawView_timerView.MainActivity"
+            android:exported="true">
 
-    <service
-        android:name=".service_test.MyService"
-        android:enabled="true"
-        android:exported="true"
-        android:permission="android.permission.BIND_JOB_SERVICE" />
-    <service
-        android:name=".service_test.MyIntentService"
-        android:exported="true"
-        android:permission="android.permission.BIND_JOB_SERVICE" />
-    <service
-        android:name=".service_test.MyIntentService2"
-        android:exported="true" />
-    <service
-        android:name=".fcm.MyFirebaseMessagingService"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="com.google.firebase.MESSAGING_EVENT" />
-        </intent-filter>
-    </service>
-    <service
-        android:name=".service_test.MyJobService"
-        android:permission="android.permission.BIND_JOB_SERVICE" />
-    <service
-        android:name=".service_test.MyJobIntentService"
-        android:permission="android.permission.BIND_JOB_SERVICE" />
-</application>
+        </activity>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5978195338103173~5559612507" />
+        <!--
+                   Set to true if your app is Standalone, that is, it does not require the handheld
+                   app to run.
+            -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <!--
+                 The API key for Google Maps-based APIs is defined as a string resource.
+                 (See the file "res/values/google_maps_api.xml").
+                 Note that the API key is linked to the encryption key used to sign the APK.
+                 You need a different API key for each encryption key, including the release key that is used to
+                 sign the APK for publishing.
+                 You can define the keys for the debug and release targets in src/debug/ and src/release/.
+            -->
+        <receiver
+            android:name=".fcm.CusBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
 
-<uses-permission android:name="android.permission.WAKE_LOCK" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+        <service
+            android:name=".service_test.MyService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service_test.MyIntentService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service_test.MyIntentService2"
+            android:exported="true" />
+        <service
+            android:name=".fcm.MyFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".service_test.MyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service_test.MyJobIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
 
-<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

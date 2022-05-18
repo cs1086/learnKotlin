@@ -16,9 +16,17 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    signingConfigs {
+        release {
+            storeFile file(keystorePath)
+            keyAlias keystoreAlias
+            storePassword storePass
+            keyPassword keyPass
+        }
+    }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -39,6 +47,10 @@ android {
 }
 
 dependencies {
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.google.android.gms:play-services-ads-lite:20.6.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.0' //最基本的rxjava功能
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'//轉換線程可以使用AndroidSchedulers.mainThread()
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'//讓retrofit2支持rxjava

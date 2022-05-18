@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/layout/activity_animator.xml" value="0.14270833333333333" />
+        <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/layout/activity_banner.xml" value="0.1578125" />
         <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/layout/activity_buttom_navigation.xml" value="0.1578125" />
         <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/layout/activity_main3.xml" value="0.13333333333333333" />
         <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/layout/activity_navigation.xml" value="0.2598958333333333" />
@@ -14,6 +15,7 @@
         <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/layout/fragment_home2.xml" value="0.1578125" />
         <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/layout/fragment_navigation1.xml" value="0.2598958333333333" />
         <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/layout/fragment_navigation2.xml" value="0.22" />
+        <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/layout/fragment_notification.xml" value="0.1578125" />
         <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/layout/fragment_notifications.xml" value="0.1578125" />
         <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/layout/fragment_test.xml" value="0.11354166666666667" />
         <entry key="..\:/APPDEV/kotlin/mouse/learnKotlin/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1578125" />

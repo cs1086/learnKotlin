@@ -1,4 +1,4 @@
-package com.example.learnkotlin.view_test
+package com.example.learnkotlin.ui_test
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

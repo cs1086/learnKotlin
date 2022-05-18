@@ -1,4 +1,4 @@
-package com.example.learnkotlin.view_test
+package com.example.learnkotlin.ui_test
 
 import android.app.NotificationChannel
 import android.app.NotificationManager

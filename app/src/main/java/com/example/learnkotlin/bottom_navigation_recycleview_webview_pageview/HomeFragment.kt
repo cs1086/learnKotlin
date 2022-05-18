@@ -11,8 +11,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.learnkotlin.view_test.DatePickerDialogActivity
-import com.example.learnkotlin.view_test.ProgressControlActivity
+import com.example.learnkotlin.ui_test.DatePickerDialogActivity
+import com.example.learnkotlin.ui_test.ProgressControlActivity
 import com.example.learnkotlin.R
 
 // TODO: Rename parameter arguments, choose names that match
