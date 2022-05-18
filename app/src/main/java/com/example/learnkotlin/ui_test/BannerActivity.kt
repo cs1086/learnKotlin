@@ -18,13 +18,10 @@ class BannerActivity : AppCompatActivity() {
         val images: ArrayList<String?> = ArrayList()
 
         //將想要輪播的廣告圖片網址新增
-
-        //將想要輪播的廣告圖片網址新增
         images.add("https://i.ytimg.com/vi/HuhkUIYRryA/maxresdefault.jpg")
         images.add("https://mrmad.com.tw/wp-content/uploads/2021/03/apple-iphone-12-cook-and-fumble.jpg")
         banner.setImageLoader(GlideIamgeLoader())
         banner.setImages(images)
-        //想要多久自動換頁
         //想要多久自動換頁
         banner.setDelayTime(3000)
         banner.start()
