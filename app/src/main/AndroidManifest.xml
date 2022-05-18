@@ -10,11 +10,19 @@ package="com.example.learnkotlin">
     android:supportsRtl="true"
     android:theme="@style/Theme.LearnKotlin">
     <activity
+        android:name="com.example.learnkotlin.jetpack.lifecycle.MainActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity
         android:name="com.example.learnkotlin.menu.buttom_navigation.ButtomNavigationActivity"
         android:exported="true"
         android:label="@string/title_activity_buttom_navigation">
-
-</activity>
+    </activity>
     <activity
         android:name=".navigation.NavigationActivity"
         android:exported="true">
@@ -40,7 +48,7 @@ package="com.example.learnkotlin">
         android:exported="true" />
     <activity
         android:name=".view_test.CoordinatorLayoutActivity"
-        android:exported="true" >
+        android:exported="true">
 
     </activity>
     <activity
@@ -54,12 +62,8 @@ package="com.example.learnkotlin">
         android:exported="true" />
     <activity
         android:name=".java_function.MessageActivity"
-        android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        android:exported="true">
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
     </activity>
     <activity
         android:name=".activity_fragment_livecycle.LifeCycleTest2Activity"
@@ -70,7 +74,7 @@ package="com.example.learnkotlin">
     <activity
         android:name=".view_test.SwipeRefreshActivity"
         android:configChanges="orientation|screenSize"
-        android:exported="true" >
+        android:exported="true">
 
     </activity>
     <activity
@@ -81,7 +85,7 @@ package="com.example.learnkotlin">
         android:exported="true" />
     <activity
         android:name=".java_function.deeplink.ProductActivity"
-        android:exported="true" >
+        android:exported="true">
 
     </activity>
     <activity
@@ -109,13 +113,14 @@ package="com.example.learnkotlin">
         android:exported="true" />
     <activity
         android:name=".sharedPreference.SharePerferenceActivity"
-        android:exported="true" >
+        android:exported="true">
 
     </activity>
     <activity android:name=".okhttp_recyclerview.InfoActivity" />
     <activity android:name=".okhttp_recyclerview.GithubStarsActivity" />
     <activity android:name=".view_test.DatePickerDialogActivity" />
-    <activity android:name=".view_test.ProgressControlActivity"
+    <activity
+        android:name=".view_test.ProgressControlActivity"
         android:exported="true">
 
     </activity>
@@ -126,24 +131,22 @@ package="com.example.learnkotlin">
     <activity
         android:name=".map.MapsActivity"
         android:exported="true"
-        android:label="@string/title_activity_maps" >
+        android:label="@string/title_activity_maps">
 
     </activity>
     <activity
         android:name=".map.GoogleMapActivity"
         android:exported="true"
         android:label="@string/title_activity_google_map"
-        android:theme="@style/Theme.LearnKotlin.NoActionBar" >
+        android:theme="@style/Theme.LearnKotlin.NoActionBar">
 
     </activity>
     <activity
         android:name=".bottom_navigation_recycleview_webview_pageview.MainActivity"
-        android:exported="true"
-        >
-    </activity>
+        android:exported="true"></activity>
     <activity
         android:name=".imagepicker_drawView_timerView.MainActivity"
-        android:exported="true" >
+        android:exported="true">
 
     </activity>
     <!--
